@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #090914;
+    --panel: #121222;
+    --border: #292944;
+    --purple: #a855f7;
+    --blue: #38bdf8;
+    --text: #f5f3ff;
+    --muted: #a3a3bd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, sans-serif;
+}
+
+button,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    width: min(100% - 32px, 760px);
+    margin: auto;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+}
+
+.logo,
+.footer-logo {
+    color: white;
+    font-family: Orbitron, sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--purple);
+}
+
+.user-badge {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    color: var(--blue);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.hero {
+    padding: 32px 24px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background:
+        radial-gradient(ellipse at 85% 15%, #54258c55, transparent 48%),
+        linear-gradient(140deg, #17172d, #0d0d1b);
+}
+
+.eyebrow {
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 20px 0 12px;
+    font-family: Orbitron, sans-serif;
+    font-size: clamp(32px, 8vw, 56px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--purple);
+    text-shadow: 0 0 30px #a855f744;
+}
+
+.hero p,
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 28px;
+}
+
+.hero-stats div {
+    display: grid;
+    gap: 6px;
+}
+
+.hero-stats strong {
+    font-family: Orbitron, sans-serif;
+    font-size: 21px;
+}
+
+.hero-stats small {
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.section {
+    margin-top: 36px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.section-title h2,
+.result-area h2 {
+    margin: 8px 0 0;
+    font-size: 21px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.game-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    min-height: 170px;
+    padding: 20px 15px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    color: white;
+    text-align: left;
+    background: var(--panel);
+    transition: transform .2s, border-color .2s;
+}
+
+.game-card:hover {
+    transform: translateY(-3px);
+}
+
+.quiz-card {
+    border-top: 2px solid var(--purple);
+}
+
+.battle-card {
+    border-top: 2px solid var(--blue);
+}
+
+.super-card {
+    grid-column: 1 / -1;
+    min-height: 125px;
+    border-top: 2px solid #34d399;
+}
+
+.game-icon {
+    font-size: 28px;
+}
+
+.game-name {
+    font-family: Orbitron, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.game-desc {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.card-arrow {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: var(--purple);
+}
+
+.setup,
+.quiz-area,
+.result-area {
+    padding: 24px 18px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--panel);
+}
+
+.setup label {
+    display: block;
+    margin: 18px 0 8px;
+    color: #dedcf5;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+select {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 13px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    outline: none;
+    color: white;
+    background: #0b0b18;
+}
+
+select:focus {
+    border-color: var(--purple);
+}
+
+.start-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 52px;
+    margin-top: 24px;
+    padding: 0 17px;
+    border: 0;
+    border-radius: 12px;
+    color: white;
+    background: linear-gradient(100deg, #7c3aed, #a855f7);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .5px;
+    transition: opacity .2s;
+}
+
+.start-btn:hover {
+    opacity: .88;
+}
+
+.start-btn:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.quiz-top,
+.quiz-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.back-btn {
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    color: white;
+    background: transparent;
+}
+
+#question-counter,
+#timer {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.progress-track {
+    height: 6px;
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #292944;
+}
+
+#progress {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    transition: width .3s;
+}
+
+.quiz-meta {
+    color: var(--blue);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+#question {
+    margin: 28px 0;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.answers {
+    display: grid;
+    gap: 10px;
+}
+
+.answer-btn {
+    width: 100%;
+    min-height: 50px;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: white;
+    background: #0c0c19;
+    text-align: left;
+}
+
+.answer-btn:disabled {
+    cursor: default;
+    opacity: .8;
+}
+
+.answer-btn.correct {
+    border-color: #34d399;
+    background: #064e3b66;
+}
+
+.answer-btn.wrong {
+    border-color: #fb7185;
+    background: #88133766;
+}
+
+#feedback {
+    min-height: 20px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.result-area {
+    text-align: center;
+}
+
+.result-icon {
+    margin-bottom: 18px;
+    font-size: 52px;
+}
+
+.score {
+    margin: 24px 0;
+    color: var(--purple);
+    font-family: Orbitron, sans-serif;
+    font-size: 44px;
+    font-weight: 800;
+}
+
+.score small {
+    font-size: 12px;
+}
+
+#result-text {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+footer {
+    padding: 40px 0 30px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 15px;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer small {
+    color: #77778f;
+    font-size: 10px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 380px) {
+    .app {
+        width: calc(100% - 22px);
+    }
+
+    .hero {
+        padding: 25px 17px;
+    }
+
+    .game-card {
+        padding: 16px 12px;
+    }
+
+    .hero-stats {
+        gap: 22px;
+    }
+}
